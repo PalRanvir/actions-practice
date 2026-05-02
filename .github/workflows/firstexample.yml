@@ -7,8 +7,11 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-            - name: List  & Read files
+
+            - name: Install Cowsay
+              run: sudo apt update -y && sudo apt install -y cowsay
+
+            - name: Generate ASCII Artwork
               run: |
-                echo "In this workflow, we are using | to run multiline commands in a single step"
-                ls -l
-                cat README.md
+                cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+                cat dragon.txt
