@@ -5,11 +5,10 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: Welcome job
-              run: echo "My first GitHub Actions Job"
             - name: Checkout repository
               uses: actions/checkout@v3
-            - name: List files
-              run: ls -l
-            - name: Read README file
-              run: cat README.md
+            - name: List  & Read files
+              run: |
+                echo "In this workflow, we are using | to run multiline commands in a single step"
+                ls -l
+                run: cat README.md
