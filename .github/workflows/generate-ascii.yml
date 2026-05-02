@@ -14,11 +14,13 @@ jobs:
         - name: Execute Cowsay
           run: cowsay -f dragon ""Run for cover, I am a DRAGON....RAWR" >> lion.txt"
 
+        - name: List Repository Files
+          run: ls -ltra
+
         - name: Verify Output
           run: grep -i 'dragon' lion.txt
 
         - name: Display Artwork
           run: cat lion.txt
 
-        - name: List Repository Files
-          run: ls -ltra
+        
